@@ -64,6 +64,7 @@ body {
   border: 10px solid #101116;
   background: #101116;
   border-radius: 5px;
+  box-shadow: 1px 1px 20px rgb(95, 95, 95);
 }
 
 .keypad{

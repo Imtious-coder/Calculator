@@ -2,26 +2,33 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [result, setResult] = useState("hey");
+  const [result, setResult] = useState("");
 
   const handleClick = (e) => {
     setResult(result.concat(e.target.name));
   }
 
   const clear = () => {
-      setResult("");
+    setResult("");
   }
 
   const backspace = () => {
     setResult(result.slice(0, -1));
   }
 
+  const calculate = () => {
+    try {
+      setResult(eval(result).toString());
+    } catch (err) {
+      setResult("Opps! Error");
+    }
+  }
 
   return (
     <>
       <div className="container">
         <form action="">
-          <input type="text" name="" id="" value={result} />
+          <input type="text" name="" id="" value={result} placeholder="Welcome!"/>
         </form>
         <div className="keypad">
           <button className="highlight" onClick={clear} id="clear">Clear</button>
@@ -41,7 +48,7 @@ function App() {
           <button className="highlight" name="+" onClick={handleClick}>+</button>
           <button name="0" onClick={handleClick}>0</button>
           <button className="highlight" name="." onClick={handleClick}>.</button>
-          <button className="highlight" onClick={handleClick} id="result">=</button>
+          <button className="highlight" onClick={calculate} id="result">=</button>
         </div>
       </div>
     </>

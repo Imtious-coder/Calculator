@@ -69,7 +69,7 @@ body {
 .keypad{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(60px, auto);
+  grid-auto-rows: minmax(70px, auto);
 }
 
 input[type="text"] {
@@ -83,4 +83,42 @@ input[type="text"] {
   font-size: 24px;
   font-weight: 500px;
   letter-spacing: 1px;
+}
+
+#clear {
+  grid-column: 1/3;
+  grid-row: 1;
+  color: rgb(6, 0, 94);
+}
+
+#result {
+  grid-column: 3/1;
+  grid-row: 5;
+  color: rgb(4, 0, 54);
+}
+
+#backspace {
+  color: rgb(3, 0, 51);
+}
+
+button {
+  margin: 8px 5px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: rgb(59, 59, 59);
+  color: white;
+}
+
+input:focus,
+button:focus,
+button:active,
+input:active,
+button{
+  border: none;
+  outline: none;
+}
+
+.highlight{
+  background: #9265fc;
 }
